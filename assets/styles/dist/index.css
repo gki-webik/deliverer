@@ -873,6 +873,7 @@ header .contact-button {
 }
 @media screen and (max-width: 670px) {
   .form-section-two form {
+    padding: 0px;
     height: 50%;
   }
 }
