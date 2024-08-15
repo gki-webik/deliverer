@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспортная компания</title>
+    <link rel="stylesheet" href="./assets/styles/dist/index.css">
+    <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+</head>
+
+<body>
+    <style>
+        .features {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 20px;
+        }
+
+        .statistics {
+            background-color: #003366;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #002244;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65672df4a5b2b658bab9f327_Dark-logo.svg"
+                    alt="Логотип">
+            </div>
+            <nav class="navMenu">
+                <ul>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Обратная связь</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="openMenu">
+                <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d3e_menu-btn.svg"
+                    alt="Кнопка Закрыть">
+            </button>
+            <button class="contact-button">Связаться с нами</button>
+        </div>
+        <div class="is-blur"></div>
+    </header>
+
+    <div class="leftMenu">
+        <div class="logo">
+            <img id="logo"
+                src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65672df4a5b2b658bab9f327_Dark-logo.svg"
+                alt="Логотип">
+            <button type="button" class="closeMenu">
+                <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d3e_menu-btn.svg"
+                    alt="Кнопка Закрыть">
+            </button>
+        </div>
+        <ul>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Обратная связь</a></li>
+        </ul>
+        <button class="contact-button">Связаться с нами</button>
+    </div>
+
+    <div class="main_block">
+        <div class="text">
+            <h1>С НАМИ ВАШ ГРУЗ НА ПРАВИЛЬНОМ ПУТИ</h1>
+            <h2>ДОСТАВКА ВАШЕГО ГРУЗА - НАША РАБОТА</h2>
+            <div>
+                Организуем доставку груза:
+                <ul>
+                    <li>Своевременно из точки А в точку В</li>
+                    <li>Безопасно</li>
+                </ul>
+            </div>
+        </div>
+        <div class="white_circle"></div>
+    </div>
+
+    <div class="brieflyAbout">
+        <div class="blockImg">
+            <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/6568852286e49aac9acf91b3_young-delivery-man-using-touchpad-while-reading-label-package%201.webp"
+                loading="lazy" alt="">
+            <div class="description">БОЛЕЕ 3 ЛЕТ УСПЕШНОЙ РАБОТЫ</div>
+        </div>
+        <div class="text">
+            Транспортная компания 000 ТК « » основана в 2021 г. с целью оказания услуг по доставке грузов собственным
+            или партнерским грузовым автомобильным транспортом грузоподьемностью от 3 до 20 тонн, в том числе грузов,
+            требующих специального режима. Весь транспорт компании своевременно обслуживается в дилерских центрах, что
+            гарантирует своевременную доставку груза клиенту. Компания динамично развивается на рынке грузоперевозок и
+            имеет в собственности грузовой автомобильный транспорт не старше 4 лет. Управляют транспортными средствами
+            водители-экспедиторы со стажем работы от 5 лет.
+            <div class="textBottom">
+                <div class="imgs">
+                    <div class="img is-1"></div>
+                    <div class="img is-left is-2"></div>
+                    <div class="img is-left is-3"></div>
+                    <div class="img is-left is-4"></div>
+                </div>
+                <div class="count"><span class="counter">0</span><span>K+</span> довольных клиентов</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Оставьте заявку <br> для просчета стоимости маршрута</h3>
+        <div class="amountFormSuccess is-none">
+            <p>Спасибо за вашу заявку!</p>
+            <p>Наш менеджер свяжется с вами в ближайшее время.</p>
+        </div>
+        <div class="amountFormError  is-none">
+            <p>Упс... Произошла ошибка...</p>
+        </div>
+        <form action="/api/sendForm.php" id="amountForm" method="post">
+            <div class="is-div amountForm is-active">
+                <label>
+                    <span>Откуда</span>
+                    <input type="text" name="inputForm1" class="inputForm1" placeholder="город">
+                    <div class="is-error is-e1 is-none">* Поле обязательно для заполнения</div>
+                </label>
+                <label>
+                    <span>Куда</span>
+                    <input type="text" name="inputForm2" class="inputForm2" placeholder="город">
+                    <div class="is-error is-e2 is-none">* Поле обязательно для заполнения</div>
+                </label>
+                <label>
+                    <span>Вес</span>
+                    <input type="text" name="inputForm3" class="inputForm3" placeholder="тонн">
+                    <div class="is-error is-e3 is-none">* Поле обязательно для заполнения</div>
+                </label>
+                <div class="btn btnStepAmountForm">
+                    <button type="button" onclick="validateForm()">Далее →</button>
+                </div>
+            </div>
+            <div class="is-div amountFormTwo is-hidden is-none">
+                <label>
+                    <span>Имя</span>
+                    <input type="text" name="inputForm4" class="inputForm4">
+                    <div class="is-error is-e4 is-none">* Поле обязательно для заполнения</div>
+                </label>
+                <label>
+                    <span>Телефон</span>
+                    <input type="tel" id="phone" name="inputForm5" class="inputForm5" maxlength="14"
+                        placeholder="(999) 999-99-99">
+                        <input name="inputForm6" class="inputForm6" hidden class="is-none">
+                    <div class="is-error is-e5 is-none">* Поле обязательно для заполнения</div>
+                </label>
+                <div class="is-div is-two">
+                    <div class="btn btnStepAmountForm">
+                        <button type="button" class="is-gray">← Назад</button>
+                    </div>
+                    <div class="btn">
+                        <button type="button" onclick="validateForm('submit')">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="map">
+            <img src="./assets/images/3.png" alt="Карта">
+        </div>
+    </div>
+
+    <div class="features">
+        <h2>Почему выбирают нас?</h2>
+        <ul>
+            <li>Быстрый расчет стоимости доставки груза</li>
+            <li>Своевременная подача необходимого транспортного средства</li>
+            <li>Страховка вашего груза</li>
+        </ul>
+        <img src="road.jpg" alt="Дорога">
+    </div>
+
+    <div class="statistics">
+        <div>40K+ Доставок грузов</div>
+        <div>12+ Новых клиентов каждый день</div>
+        <div>25 Постоянных клиентов</div>
+        <div>98% Довольных клиентов</div>
+    </div>
+    <div class="slider">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slider-wrapper">
+            <div class="slide">
+                <img src="./assets/images/4.jpg" alt="Image 1">
+                <p>Тентовые автомобили грузоподъёмностью 3 тонны</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/1.jpg" alt="Image 1">
+                <p>Тентовые грузовые автомобили грузоподъёмностью 20 тонн</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/5.png" alt="Image 1">
+                <p>Рефрижераторные автомобили грузоподъёмностью 20 тонн</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/4.jpg" alt="Image 1">
+                <p>Тентовые автомобили грузоподъёмностью 3 тонны</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/1.jpg" alt="Image 1">
+                <p>Тентовые грузовые автомобили грузоподъёмностью 20 тонн</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/5.png" alt="Image 1">
+                <p>Рефрижераторные автомобили грузоподъёмностью 20 тонн</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/4.jpg" alt="Image 1">
+                <p>Тентовые автомобили грузоподъёмностью 3 тонны</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/1.jpg" alt="Image 1">
+                <p>Тентовые грузовые автомобили грузоподъёмностью 20 тонн</p>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/5.png" alt="Image 1">
+                <p>Рефрижераторные автомобили грузоподъёмностью 20 тонн</p>
+            </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        <div class="footer-logo">Лого</div>
+        <nav>
+            <ul>
+                <li><a href="#">Вакансии</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Обратная связь</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <form class="newsletter">
+            <input type="email" placeholder="E-mail">
+            <button type="submit">Подписаться на новости</button>
+        </form>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="./assets/scripts/index.js"></script>
+</body>
+
+</html>
