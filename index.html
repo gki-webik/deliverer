@@ -13,20 +13,6 @@
 
 <body>
     <style>
-        .features {
-            display: flex;
-            justify-content: space-between;
-            padding: 50px 20px;
-        }
-
-        .statistics {
-            background-color: #003366;
-            color: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
         footer {
             background-color: #002244;
             color: white;
@@ -163,7 +149,7 @@
                     <span>Телефон</span>
                     <input type="tel" id="phone" name="inputForm5" class="inputForm5" maxlength="14"
                         placeholder="(999) 999-99-99">
-                        <input name="inputForm6" class="inputForm6" hidden class="is-none">
+                    <input name="inputForm6" class="inputForm6" hidden class="is-none">
                     <div class="is-error is-e5 is-none">* Поле обязательно для заполнения</div>
                 </label>
                 <div class="is-div is-two">
@@ -183,20 +169,62 @@
 
     <div class="features">
         <h2>Почему выбирают нас?</h2>
-        <ul>
-            <li>Быстрый расчет стоимости доставки груза</li>
-            <li>Своевременная подача необходимого транспортного средства</li>
-            <li>Страховка вашего груза</li>
-        </ul>
-        <img src="road.jpg" alt="Дорога">
+        <div class="content">
+            <div class="text">
+                <ul>
+                    <li>Быстрый расчет стоимости доставки груза <img
+                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
+                            alt="Значок 1"></li>
+                    <li>Своевременная подача необходимого транспортного средства <img
+                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
+                            alt="Значок 2"></li>
+                    <li>Страховка вашего груза <img
+                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
+                            alt="Значок 3"></li>
+                    <li>Персональный менеджер на всем протяжении маршрута <img
+                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
+                            alt="Значок 4"></li>
+                    <li>Своевременная сдача документов через ЭДО или доставка курьером<img
+                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
+                            alt="Значок 5"></li>
+                </ul>
+            </div>
+            <img src="./assets/images/2.png" alt="Дорога">
+        </div>
+    </div>
+    <div class="form-section-two">
+        <h4>Хотите с нами поработать?</h4>
+        <h3>Оставьте заявку для расчета <br> стоимости доставки груза</h3>
+        <div class="amountFormSuccess is-none">
+            <p>Спасибо за вашу заявку!</p>
+            <p>Наш менеджер свяжется с вами в ближайшее время.</p>
+        </div>
+        <div class="amountFormError  is-none">
+            <p>Упс... Произошла ошибка...</p>
+        </div>
+
+        <form action="" method="post">
+            <input type="text" placeholder="ФИО">
+            <div>
+                <input type="text" placeholder="E-mail">
+                <input type="text" placeholder="Телефон">
+            </div>
+            <input type="text" placeholder="Комментарий">
+            <button type="submit">Отправить заявку</button>
+        </form>
+
+        <div class="map">
+            <img src="./assets/images/3.png" alt="Карта">
+        </div>
+        <div class="statistics">
+            <div><span class="is-red"><span class="spanCount1">40</span>K+</span> <span>Доставок грузов</span></div>
+            <div><span class="is-red"><span class="spanCount1">12</span>+</span> <span>Новых клиентов каждый день</span>
+            </div>
+            <div><span class="is-red"><span class="spanCount1">25</span></span> <span>Постоянных клиентов</span></div>
+            <div><span class="is-red"><span class="spanCount1">98</span>%</span> <span>Довольных клиентов</span></div>
+        </div>
     </div>
 
-    <div class="statistics">
-        <div>40K+ Доставок грузов</div>
-        <div>12+ Новых клиентов каждый день</div>
-        <div>25 Постоянных клиентов</div>
-        <div>98% Довольных клиентов</div>
-    </div>
     <div class="slider">
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
         <div class="slider-wrapper">

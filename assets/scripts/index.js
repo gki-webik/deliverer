@@ -183,3 +183,99 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(counterElement);
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const counterElement = document.querySelector('.spanCount1');
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                gsap.to(counterElement, {
+                    innerText: 40,
+                    duration: 3,
+                    snap: { innerText: 0.5 },
+                    ease: "power1.inOut",
+                    onUpdate: function () {
+                        counterElement.innerText = Math.floor(counterElement.innerText);
+                    }
+                });
+                observer.unobserve(counterElement);
+            }
+        });
+    });
+
+    observer.observe(counterElement);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const counterElement = document.querySelector('.spanCount2');
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                gsap.to(counterElement, {
+                    innerText: 12,
+                    duration: 3,
+                    snap: { innerText: 0.5 },
+                    ease: "power1.inOut",
+                    onUpdate: function () {
+                        counterElement.innerText = Math.floor(counterElement.innerText);
+                    }
+                });
+                observer.unobserve(counterElement);
+            }
+        });
+    });
+
+    observer.observe(counterElement);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const counterElement = document.querySelector('.spanCount3');
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                gsap.to(counterElement, {
+                    innerText: 25,
+                    duration: 3,
+                    snap: { innerText: 0.5 },
+                    ease: "power1.inOut",
+                    onUpdate: function () {
+                        counterElement.innerText = Math.floor(counterElement.innerText);
+                    }
+                });
+                observer.unobserve(counterElement);
+            }
+        });
+    });
+
+    observer.observe(counterElement);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const counterElement = document.querySelector('.spanCount4');
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                gsap.to(counterElement, {
+                    innerText: 98,
+                    duration: 3,
+                    snap: { innerText: 0.5 },
+                    ease: "power1.inOut",
+                    onUpdate: function () {
+                        counterElement.innerText = Math.floor(counterElement.innerText);
+                    }
+                });
+                observer.unobserve(counterElement);
+            }
+        });
+    });
+
+    observer.observe(counterElement);
+});
