@@ -80,8 +80,9 @@ window.intlTelInput(inputPhone, {
 
 /* Валидация формы */
 const btnStepAmountForm = document.querySelectorAll(".btnStepAmountForm");
-let amountForm = document.querySelector(".amountForm");
+let amountFormOne = document.querySelector(".amountFormOne");
 let amountFormTwo = document.querySelector(".amountFormTwo");
+let inputForm6 = document.querySelector(".inputForm6");
 const inputs = [".inputForm1", ".inputForm2", ".inputForm3"].map(selector => document.querySelector(selector));
 const inputs2 = [".inputForm4", ".inputForm5"].map(selector => document.querySelector(selector));
 const errors = [".is-e1", ".is-e2", ".is-e3"].map(selector => document.querySelector(selector));
@@ -100,12 +101,12 @@ function validateForm(type) {
     if (isValid) {
         btnStepAmountForm.forEach(element => {
             element.addEventListener('click', () => {
-                amountForm.classList.toggle("is-hidden");
-                amountForm.classList.toggle("is-active");
+                amountFormOne.classList.toggle("is-hidden");
+                amountFormOne.classList.toggle("is-active");
                 amountFormTwo.classList.toggle("is-hidden");
                 amountFormTwo.classList.toggle("is-active");
                 setTimeout(() => {
-                    amountForm.classList.toggle("is-none");
+                    amountFormOne.classList.toggle("is-none");
                     amountFormTwo.classList.toggle("is-none");
                 }, 200);
             });
@@ -123,16 +124,53 @@ function validateForm(type) {
         });
         if (isValid2) {
             document.querySelector(".amountForm").classList.add("is-none");
-            console.log(document.querySelector(".amountForm"));
+            inputForm6.value = document.querySelector(".iti__selected-dial-code").textContent;
             const formData = new FormData(document.querySelector(".amountForm"));
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', event.target.action);
+            xhr.open('POST', document.querySelector(".amountForm").action);
             xhr.addEventListener('load', () => {
                 document.querySelector(xhr.status === 200 ? ".amountFormSuccess" : ".amountFormError").classList.remove("is-none");
             });
             xhr.addEventListener('error', () => document.querySelector(".amountFormError").classList.remove("is-none"));
             xhr.send(formData);
         }
+    }
+}
+function submitFormEmail() {
+    function validateEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+    function validatePhone(phone) {
+        const phonePattern = /^\+?[1-9]\d{1,14}$/;
+        return phonePattern.test(phone);
+    }
+    if (validateEmail(document.querySelector(".inputFormEmail2").value) && validatePhone(document.querySelector(".inputFormEmail3").value)) {
+        document.querySelector(".formEmail").classList.add("is-hidden");
+        const formData = new FormData(document.querySelector(".formEmail"));
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', document.querySelector(".formEmail").action);
+        xhr.addEventListener('load', () => {
+            document.querySelector(xhr.status === 200 ? ".formEmailSuccess" : ".formEmailError").classList.remove("is-none");
+        });
+        xhr.addEventListener('error', () => document.querySelector(".formEmailError").classList.remove("is-none"));
+        xhr.send(formData);
+    }
+}
+function submitNewsletter() {
+    function validateEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+    if (validateEmail(document.querySelector(".emailNewsletter").value)) {
+        const formData = new FormData(document.querySelector(".formNewsletter"));
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', document.querySelector(".formNewsletter").action);
+        xhr.addEventListener('load', () => {
+            alert("Спасибо за подписку!");
+        });
+        xhr.addEventListener('error', () => alert("Ошибка"));
+        xhr.send(formData);
     }
 }
 

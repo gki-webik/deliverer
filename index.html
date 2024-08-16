@@ -12,21 +12,6 @@
 </head>
 
 <body>
-    <style>
-        footer {
-            background-color: #002244;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .newsletter input {
-            padding: 10px;
-            margin-right: 10px;
-        }
-    </style>
     <header>
         <div class="menu">
             <div class="logo">
@@ -118,8 +103,8 @@
         <div class="amountFormError  is-none">
             <p>Упс... Произошла ошибка...</p>
         </div>
-        <form action="/api/sendForm.php" id="amountForm" method="post">
-            <div class="is-div amountForm is-active">
+        <form action="/api/sendForm.php" class="amountForm" method="post">
+            <div class="is-div amountFormOne is-active">
                 <label>
                     <span>Откуда</span>
                     <input type="text" name="inputForm1" class="inputForm1" placeholder="город">
@@ -132,7 +117,7 @@
                 </label>
                 <label>
                     <span>Вес</span>
-                    <input type="text" name="inputForm3" class="inputForm3" placeholder="тонн">
+                    <input type="number" name="inputForm3" class="inputForm3" placeholder="тонн">
                     <div class="is-error is-e3 is-none">* Поле обязательно для заполнения</div>
                 </label>
                 <div class="btn btnStepAmountForm">
@@ -161,6 +146,7 @@
                     </div>
                 </div>
             </div>
+            <input type="text" name="type" value="1" hidden class="is-none">
         </form>
         <div class="map">
             <img src="./assets/images/3.png" alt="Карта">
@@ -195,22 +181,23 @@
     <div class="form-section-two">
         <h4>Хотите с нами поработать?</h4>
         <h3>Оставьте заявку для расчета <br> стоимости доставки груза</h3>
-        <div class="amountFormSuccess is-none">
+        <div class="formEmailSuccess is-none">
             <p>Спасибо за вашу заявку!</p>
             <p>Наш менеджер свяжется с вами в ближайшее время.</p>
         </div>
-        <div class="amountFormError  is-none">
+        <div class="formEmailError  is-none">
             <p>Упс... Произошла ошибка...</p>
         </div>
 
-        <form action="" method="post">
-            <input type="text" placeholder="ФИО">
+        <form action="/api/sendForm.php" class="formEmail" method="post">
+            <input type="text" name="fio" required class="inputFormEmail1" placeholder="ФИО">
             <div>
-                <input type="text" placeholder="E-mail">
-                <input type="text" placeholder="Телефон">
+                <input type="email" name="email" required class="inputFormEmail2" placeholder="E-mail">
+                <input type="tel" name="tel" required class="inputFormEmail3" placeholder="Телефон">
             </div>
-            <input type="text" placeholder="Комментарий">
-            <button type="submit">Отправить заявку</button>
+            <input type="text" name="comment" placeholder="Комментарий">
+            <input type="text" name="type" value="2" hidden class="is-none">
+            <button type="button" onclick="submitFormEmail()" class="formEmailBtn">Отправить заявку</button>
         </form>
 
         <div class="map">
@@ -288,18 +275,29 @@
     </div>
 
     <footer>
-        <div class="footer-logo">Лого</div>
+        <div class="footer-logo">
+            <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65672938d8807d2d36c44819_Logo_White.svg"
+                alt="Логотип">
+            <p>
+                Оператор логистических услуг, эксперт в сфере комплексных решений и организации грузоперевозок по
+                России
+            </p>
+        </div>
         <nav>
             <ul>
                 <li><a href="#">Вакансии</a></li>
-                <li><a href="#">О компании</a></li>
                 <li><a href="#">Обратная связь</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">О компании</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
         </nav>
-        <form class="newsletter">
-            <input type="email" placeholder="E-mail">
-            <button type="submit">Подписаться на новости</button>
+        <form class="newsletter formNewsletter" action="/api/sendForm.php" method="post">
+            <p>Подпишитесь на нашу рассылку с актуальными акциями и новостями компании</p>
+            <input type="email" name="email" class="emailNewsletter" placeholder="E-mail">
+            <input type="text" name="type" value="3" hidden class="is-none">
+            <button type="button" class="btnNewsletter" onclick="submitNewsletter()">Подписаться на новости</button>
         </form>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>

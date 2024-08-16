@@ -19,6 +19,11 @@ body {
   visibility: hidden !important;
 }
 
+.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 .fade-in-text {
   opacity: 0;
   -webkit-transform: translateY(50px);
@@ -873,6 +878,60 @@ header .contact-button {
     min-height: 125vh;
   }
 }
+.form-section-two .formEmailSuccess {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 3px solid rgb(29, 183, 45);
+  padding: 20px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  max-width: 600px;
+  z-index: 9;
+}
+.form-section-two .formEmailSuccess p {
+  font-size: 1.4em;
+  text-align: center;
+}
+.form-section-two .formEmailError {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 3px solid red;
+  padding: 20px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  max-width: 600px;
+  z-index: 9;
+}
+.form-section-two .formEmailError p {
+  font-size: 1.4em;
+  text-align: center;
+}
 .form-section-two h3 {
   font-size: 2.3em;
   margin-top: 30px;
@@ -1277,4 +1336,173 @@ header .contact-button {
         -ms-flex: 0 0 33.33%;
             flex: 0 0 33.33%;
   }
+}
+
+footer {
+  background-color: #002244;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 50px;
+  position: relative;
+  top: 140px;
+  gap: 35px;
+}
+@media screen and (max-width: 1110px) {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer * {
+    text-align: center;
+  }
+}
+footer .footer-logo {
+  max-width: 400px;
+  font-weight: 300;
+}
+footer .footer-logo img {
+  width: 150px;
+}
+footer .footer-logo p {
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 385px) {
+  footer .footer-logo p {
+    font-size: 1rem;
+  }
+}
+footer .newsletter {
+  max-width: 300px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+footer .newsletter p {
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 385px) {
+  footer .newsletter p {
+    font-size: 1rem;
+  }
+}
+footer .newsletter input {
+  padding: 15px;
+  height: 47px;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left !important;
+}
+footer .newsletter input::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: gray;
+}
+footer .newsletter input::-moz-placeholder {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: gray;
+}
+footer .newsletter input:-ms-input-placeholder {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: gray;
+}
+footer .newsletter input::-ms-input-placeholder {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: gray;
+}
+footer .newsletter input::placeholder {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: gray;
+}
+@media screen and (max-width: 385px) {
+  footer .newsletter input::-webkit-input-placeholder {
+    font-size: 1rem;
+  }
+  footer .newsletter input::-moz-placeholder {
+    font-size: 1rem;
+  }
+  footer .newsletter input:-ms-input-placeholder {
+    font-size: 1rem;
+  }
+  footer .newsletter input::-ms-input-placeholder {
+    font-size: 1rem;
+  }
+  footer .newsletter input::placeholder {
+    font-size: 1rem;
+  }
+}
+footer .newsletter button {
+  background-color: #ce0000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 385px) {
+  footer .newsletter button {
+    font-size: 1rem;
+  }
+}
+footer nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+footer nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+footer nav ul li {
+  list-style-type: none;
+  font-weight: 200;
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 385px) {
+  footer nav ul li {
+    font-size: 1rem;
+  }
+}
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: 0.15s color ease-in-out;
+  transition: 0.15s color ease-in-out;
+}
+footer nav ul li a:hover {
+  color: #ce0000;
 }
