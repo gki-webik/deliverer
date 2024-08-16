@@ -68,6 +68,27 @@ if (isset($_POST['type'])) {
         } else {
             http_response_code(404);
         }
+    } else if ($_POST['type'] == "4") {
+        if (isset($_POST['fio']) && isset($_POST['email']) && isset($_POST['tel'])) {
+            $fio = $_POST['fio'];
+            $email = $_POST['email'];
+            $tel = $_POST['tel'];
+            $mail = "Форма поддержки" . "\n\n" .
+                "Фио: $fio" . "\n" .
+                "Email: $email" . "\n" .
+                "Телефон: $tel";
+            if (isset($_POST['text'])) {
+                $text = $_POST['text'];
+                if ($text != " " && $text != "") {
+                    $mail .= "\nКомментарий: $text";
+                }
+            }
+            message_to_telegram($mail);
+        } else {
+            http_response_code(404);
+        }
+    } else {
+        http_response_code(404);
     }
 } else {
     http_response_code(404);

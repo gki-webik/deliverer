@@ -8,6 +8,10 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Краткое описание сайта -->
+    <meta name="description" content="Транспортная компания" />
+
     <title>Транспортная компания</title>
 
     <?php print_r($meta); ?>
@@ -23,22 +27,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
 <body>
 
     <?php print_r($menu); ?>
-
-    <div class="leftMenu">
-        <div class="logo">
-            <img id="logo" src="./assets/images/Dark-logo.svg" alt="Логотип">
-            <button type="button" class="closeMenu">
-                <img src="./assets/images/menu-btn.svg" alt="Кнопка Закрыть">
-            </button>
-        </div>
-        <ul>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Вакансии</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Обратная связь</a></li>
-        </ul>
-        <button class="contact-button">Связаться с нами</button>
-    </div>
 
     <div class="main_block">
         <div class="text">

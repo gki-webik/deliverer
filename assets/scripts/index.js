@@ -173,6 +173,31 @@ function submitNewsletter() {
         xhr.send(formData);
     }
 }
+function submitContactForm() {
+    function validateEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+    function validatePhone(phone) {
+        const phonePattern = /^\+?[1-9]\d{1,14}$/;
+        return phonePattern.test(phone);
+    }
+    if (validateEmail(document.querySelector(".formContact_email").value) && validatePhone(document.querySelector(".formContact_tel").value)) {
+        document.querySelector(".block_left").classList.add("is-none");
+        document.querySelector(".centerStatusSuccess").classList.remove("is-none");
+        const formData = new FormData(document.querySelector(".formContact"));
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', document.querySelector(".formContact").action);
+        xhr.addEventListener('load', () => {
+            document.querySelector(xhr.status === 200 ? ".centerStatusSuccess" : ".centerStatusError").classList.remove("is-none");
+        });
+        xhr.addEventListener('error', () => {
+            document.querySelector(".centerStatusSuccess").classList.add("is-none")
+            document.querySelector(".centerStatusError").classList.remove("is-none")
+        });
+        xhr.send(formData);
+    }
+}
 
 /* Цифры от GSAP */
 document.addEventListener('DOMContentLoaded', function () {

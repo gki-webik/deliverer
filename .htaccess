@@ -1,0 +1,9 @@
+# https
+# RewriteEngine on
+# RewriteCond %{HTTP:X-Forwarded-Proto} !https
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# Роуты
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.webp|\.gif|\.jpeg|\.zip|\.css|\.svg|\.js|\.pdf|\.ttf|\.woff2|\.eot|\.woff|\.pdf|\.mp3|\.mp4|\.ogv|\.webm|\.txt|\.doc|\.docx|\.exe|\.py|\.php|\.html|\.apk|\.json|\.xml)$
+RewriteRule (.*) routes.php [QSA,L]
