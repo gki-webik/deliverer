@@ -1,3 +1,7 @@
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,44 +9,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Транспортная компания</title>
-    <link rel="stylesheet" href="./assets/styles/dist/index.css">
+
+    <?php print_r($meta); ?>
+
+    <!-- Телефон -->
     <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
+    <!-- Стиль Сайта -->
+    <link rel="stylesheet" href="/assets/styles/dist/index.css">
 </head>
 
 <body>
-    <header>
-        <div class="menu">
-            <div class="logo">
-                <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65672df4a5b2b658bab9f327_Dark-logo.svg"
-                    alt="Логотип">
-            </div>
-            <nav class="navMenu">
-                <ul>
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Вакансии</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Обратная связь</a></li>
-                </ul>
-            </nav>
-            <button type="button" class="openMenu">
-                <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d3e_menu-btn.svg"
-                    alt="Кнопка Закрыть">
-            </button>
-            <button class="contact-button">Связаться с нами</button>
-        </div>
-        <div class="is-blur"></div>
-    </header>
+
+    <?php print_r($menu); ?>
 
     <div class="leftMenu">
         <div class="logo">
-            <img id="logo"
-                src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65672df4a5b2b658bab9f327_Dark-logo.svg"
-                alt="Логотип">
+            <img id="logo" src="./assets/images/Dark-logo.svg" alt="Логотип">
             <button type="button" class="closeMenu">
-                <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d3e_menu-btn.svg"
-                    alt="Кнопка Закрыть">
+                <img src="./assets/images/menu-btn.svg" alt="Кнопка Закрыть">
             </button>
         </div>
         <ul>
@@ -71,8 +57,7 @@
 
     <div class="brieflyAbout">
         <div class="blockImg">
-            <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/6568852286e49aac9acf91b3_young-delivery-man-using-touchpad-while-reading-label-package%201.webp"
-                loading="lazy" alt="">
+            <img src="./assets/images/1.webp" loading="lazy" alt="">
             <div class="description">БОЛЕЕ 3 ЛЕТ УСПЕШНОЙ РАБОТЫ</div>
         </div>
         <div class="text">
@@ -158,21 +143,15 @@
         <div class="content">
             <div class="text">
                 <ul>
-                    <li>Быстрый расчет стоимости доставки груза <img
-                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
-                            alt="Значок 1"></li>
+                    <li>Быстрый расчет стоимости доставки груза <img src="./assets/images/High1024.webp" alt="Значок 1">
+                    </li>
                     <li>Своевременная подача необходимого транспортного средства <img
-                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
-                            alt="Значок 2"></li>
-                    <li>Страховка вашего груза <img
-                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
-                            alt="Значок 3"></li>
-                    <li>Персональный менеджер на всем протяжении маршрута <img
-                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
+                            src="./assets/images/High1024.webp" alt="Значок 2"></li>
+                    <li>Страховка вашего груза <img src="./assets/images/High1024.webp" alt="Значок 3"></li>
+                    <li>Персональный менеджер на всем протяжении маршрута <img src="./assets/images/High1024.webp"
                             alt="Значок 4"></li>
                     <li>Своевременная сдача документов через ЭДО или доставка курьером<img
-                            src="https://cdn3.iconfinder.com/data/icons/shopping-2/256/High_Quality_Guarantee-1024.png"
-                            alt="Значок 5"></li>
+                            src="./assets/images/High1024.webp" alt="Значок 5"></li>
                 </ul>
             </div>
             <img src="./assets/images/2.png" alt="Дорога">
@@ -273,34 +252,10 @@
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="footer-logo">
-            <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65672938d8807d2d36c44819_Logo_White.svg"
-                alt="Логотип">
-            <p>
-                Оператор логистических услуг, эксперт в сфере комплексных решений и организации грузоперевозок по
-                России
-            </p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Вакансии</a></li>
-                <li><a href="#">Обратная связь</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">О компании</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
-        </nav>
-        <form class="newsletter formNewsletter" action="/api/sendForm.php" method="post">
-            <p>Подпишитесь на нашу рассылку с актуальными акциями и новостями компании</p>
-            <input type="email" name="email" class="emailNewsletter" placeholder="E-mail">
-            <input type="text" name="type" value="3" hidden class="is-none">
-            <button type="button" class="btnNewsletter" onclick="submitNewsletter()">Подписаться на новости</button>
-        </form>
-    </footer>
+    <?php print_r($footer); ?>
+    <!-- Цифры -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Скрипт сайта -->
     <script src="./assets/scripts/index.js"></script>
 </body>
 
