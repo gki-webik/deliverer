@@ -470,6 +470,7 @@
           align-items: center;
   gap: 20px;
   max-width: 600px;
+  width: 100%;
   z-index: 9;
 }
 .form-section .amountFormSuccess p {
@@ -497,6 +498,7 @@
           align-items: center;
   gap: 20px;
   max-width: 600px;
+  width: 100%;
   z-index: 9;
 }
 .form-section .amountFormError p {
@@ -678,6 +680,7 @@
           align-items: center;
   gap: 20px;
   max-width: 600px;
+  width: 100%;
   z-index: 9;
 }
 .form-section-two .formEmailSuccess p {
@@ -705,6 +708,7 @@
           align-items: center;
   gap: 20px;
   max-width: 600px;
+  width: 100%;
   z-index: 9;
 }
 .form-section-two .formEmailError p {
@@ -928,6 +932,7 @@
           align-items: center;
   gap: 20px;
   max-width: 600px;
+  width: 100%;
   z-index: 9;
 }
 .form-section-two .amountFormSuccess p {
@@ -955,6 +960,7 @@
           align-items: center;
   gap: 20px;
   max-width: 600px;
+  width: 100%;
   z-index: 9;
 }
 .form-section-two .amountFormError p {
