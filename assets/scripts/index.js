@@ -60,6 +60,12 @@ function getSlidesToShow() {
 window.addEventListener('resize', () => {
     const wrapper = document.querySelector('.slider-wrapper');
     const slidesToShow = getSlidesToShow();
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (currentIndex >= totalSlides - slidesToShow) {
+        currentIndex = totalSlides - slidesToShow;
+    }
+
     wrapper.style.transform = `translateX(-${currentIndex * (100 / slidesToShow)}%)`;
 });
 
@@ -76,85 +82,57 @@ window.intlTelInput(inputPhone, {
 const btnStepAmountForm = document.querySelectorAll(".btnStepAmountForm");
 let amountForm = document.querySelector(".amountForm");
 let amountFormTwo = document.querySelector(".amountFormTwo");
-const inputForm1 = document.querySelector(".inputForm1");
-const inputForm2 = document.querySelector(".inputForm2");
-const inputForm3 = document.querySelector(".inputForm3");
-const inputForm4 = document.querySelector(".inputForm4");
-const inputForm5 = document.querySelector(".inputForm5");
-const inputForm6 = document.querySelector(".inputForm6");
-let is_e1 = document.querySelector(".is-e1");
-let is_e2 = document.querySelector(".is-e2");
-let is_e3 = document.querySelector(".is-e3");
-let is_e4 = document.querySelector(".is-e4");
-let is_e5 = document.querySelector(".is-e5");
+const inputs = [".inputForm1", ".inputForm2", ".inputForm3"].map(selector => document.querySelector(selector));
+const inputs2 = [".inputForm4", ".inputForm5"].map(selector => document.querySelector(selector));
+const errors = [".is-e1", ".is-e2", ".is-e3"].map(selector => document.querySelector(selector));
+const errors2 = [".is-e4", ".is-e5"].map(selector => document.querySelector(selector));
 
 function validateForm(type) {
-    if (inputForm1.value == "" || inputForm1.value == " ") {
-        is_e1.classList.remove("is-none");
-        return;
-    }
-    is_e1.classList.add("is-none");
-    if (inputForm2.value == "" || inputForm2.value == " ") {
-        is_e2.classList.remove("is-none");
-        return;
-    }
-    is_e2.classList.add("is-none");
-    if (inputForm3.value == "" || inputForm3.value == " ") {
-        is_e3.classList.remove("is-none");
-        return;
-    }
-    is_e3.classList.add("is-none");
-    btnStepAmountForm.forEach(element => {
-        element.addEventListener('click', () => {
-            amountForm.classList.toggle("is-hidden");
-            amountForm.classList.toggle("is-active");
-            amountFormTwo.classList.toggle("is-hidden");
-            amountFormTwo.classList.toggle("is-active");
-            setTimeout(() => {
-                amountForm.classList.toggle("is-none");
-                amountFormTwo.classList.toggle("is-none");
-            }, 200);
-        });
+    let isValid = true;
+    inputs.forEach((input, index) => {
+        if (input.value.trim() === "") {
+            errors[index].classList.remove("is-none");
+            isValid = false;
+        } else {
+            errors[index].classList.add("is-none");
+        }
     });
-    if (type == "submit") {
-        if (inputForm4.value == "" || inputForm4.value == " ") {
-            is_e4.classList.remove("is-none");
-            return;
-        }
-        is_e4.classList.add("is-none");
-        if (inputForm5.value == "" || inputForm5.value == " ") {
-            is_e5.classList.remove("is-none");
-            return;
-        }
-        is_e5.classList.add("is-none");
-        document.getElementById('amountForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            inputForm6.value = document.querySelector(".iti__selected-dial-code").textContent;
-            var form = event.target;
-            var formData = new FormData(form);
-            var xhr = new XMLHttpRequest();
-
-            document.querySelector(".amountForm").classList.add("is-none");
-
-            xhr.addEventListener('load', function () {
-                if (xhr.status == 200) {
-                    document.querySelector(".amountFormSuccess").classList.remove("is-none");
-                } else {
-                    document.querySelector(".amountFormError").classList.remove("is-none");
-                }
+    if (isValid) {
+        btnStepAmountForm.forEach(element => {
+            element.addEventListener('click', () => {
+                amountForm.classList.toggle("is-hidden");
+                amountForm.classList.toggle("is-active");
+                amountFormTwo.classList.toggle("is-hidden");
+                amountFormTwo.classList.toggle("is-active");
+                setTimeout(() => {
+                    amountForm.classList.toggle("is-none");
+                    amountFormTwo.classList.toggle("is-none");
+                }, 200);
             });
-
-            xhr.addEventListener('error', function () {
-                document.querySelector(".amountFormError").classList.remove("is-none");
-            });
-
-            xhr.addEventListener('abort', function () {
-                document.querySelector(".amountFormError").classList.remove("is-none");
-            });
-
-            xhr.open('POST', form.action);
-            xhr.send(formData);
         });
+    }
+    if (isValid && type === "submit") {
+        let isValid2 = true;
+        inputs2.forEach((input, index) => {
+            if (input.value.trim() === "") {
+                errors2[index].classList.remove("is-none");
+                isValid2 = false;
+            } else {
+                errors2[index].classList.add("is-none");
+            }
+        });
+        if (isValid2) {
+            document.querySelector(".amountForm").classList.add("is-none");
+            console.log(document.querySelector(".amountForm"));
+            const formData = new FormData(document.querySelector(".amountForm"));
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', event.target.action);
+            xhr.addEventListener('load', () => {
+                document.querySelector(xhr.status === 200 ? ".amountFormSuccess" : ".amountFormError").classList.remove("is-none");
+            });
+            xhr.addEventListener('error', () => document.querySelector(".amountFormError").classList.remove("is-none"));
+            xhr.send(formData);
+        }
     }
 }
 
@@ -184,98 +162,113 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(counterElement);
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const counterElement = document.querySelector('.spanCount1');
-    let hasAnimated = false;
+    const counterElement1 = document.querySelector('.spanCount1');
+    let hasAnimated1 = false;
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer1 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                gsap.to(counterElement, {
+            if (entry.isIntersecting && !hasAnimated1) {
+                hasAnimated1 = true;
+                gsap.to(counterElement1, {
                     innerText: 40,
-                    duration: 3,
+                    duration: 1.7,
                     snap: { innerText: 0.5 },
                     ease: "power1.inOut",
                     onUpdate: function () {
-                        counterElement.innerText = Math.floor(counterElement.innerText);
+                        counterElement1.innerText = Math.floor(counterElement1.innerText);
                     }
                 });
-                observer.unobserve(counterElement);
+                observer1.unobserve(counterElement1);
             }
         });
     });
 
-    observer.observe(counterElement);
+    observer1.observe(counterElement1);
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const counterElement = document.querySelector('.spanCount2');
-    let hasAnimated = false;
+    const counterElement2 = document.querySelector('.spanCount2');
+    let hasAnimated2 = false;
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer2 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                gsap.to(counterElement, {
+            if (entry.isIntersecting && !hasAnimated2) {
+                hasAnimated2 = true;
+                gsap.to(counterElement2, {
                     innerText: 12,
-                    duration: 3,
+                    duration: 1.7,
                     snap: { innerText: 0.5 },
                     ease: "power1.inOut",
                     onUpdate: function () {
-                        counterElement.innerText = Math.floor(counterElement.innerText);
+                        counterElement2.innerText = Math.floor(counterElement2.innerText);
                     }
                 });
-                observer.unobserve(counterElement);
+                observer2.unobserve(counterElement2);
             }
         });
     });
 
-    observer.observe(counterElement);
+    observer2.observe(counterElement2);
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const counterElement = document.querySelector('.spanCount3');
-    let hasAnimated = false;
+    const counterElement3 = document.querySelector('.spanCount3');
+    let hasAnimated3 = false;
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer3 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                gsap.to(counterElement, {
+            if (entry.isIntersecting && !hasAnimated3) {
+                hasAnimated3 = true;
+                gsap.to(counterElement3, {
                     innerText: 25,
-                    duration: 3,
+                    duration: 1.7,
                     snap: { innerText: 0.5 },
                     ease: "power1.inOut",
                     onUpdate: function () {
-                        counterElement.innerText = Math.floor(counterElement.innerText);
+                        counterElement3.innerText = Math.floor(counterElement3.innerText);
                     }
                 });
-                observer.unobserve(counterElement);
+                observer3.unobserve(counterElement3);
             }
         });
     });
 
-    observer.observe(counterElement);
+    observer3.observe(counterElement3);
 });
 document.addEventListener('DOMContentLoaded', function () {
-    const counterElement = document.querySelector('.spanCount4');
-    let hasAnimated = false;
+    const counterElement4 = document.querySelector('.spanCount4');
+    let hasAnimated4 = false;
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer4 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                gsap.to(counterElement, {
+            if (entry.isIntersecting && !hasAnimated4) {
+                hasAnimated4 = true;
+                gsap.to(counterElement4, {
                     innerText: 98,
-                    duration: 3,
+                    duration: 1.7,
                     snap: { innerText: 0.5 },
                     ease: "power1.inOut",
                     onUpdate: function () {
-                        counterElement.innerText = Math.floor(counterElement.innerText);
+                        counterElement4.innerText = Math.floor(counterElement4.innerText);
                     }
                 });
-                observer.unobserve(counterElement);
+                observer4.unobserve(counterElement4);
             }
         });
     });
 
-    observer.observe(counterElement);
+    observer4.observe(counterElement4);
+});
+
+/* Hover img с одинаковыми пропорциями */
+document.addEventListener('DOMContentLoaded', function () {
+    function editMaxHeight() {
+        let allImages = document.querySelectorAll(".imgSlide");
+        allImages.forEach((image) => {
+            image.style.maxHeight = image.offsetWidth + "px";
+            image.style.height = image.offsetWidth + "px";
+            image.parentNode.style.maxHeight = image.offsetWidth + "px";
+            image.parentNode.style.height = image.offsetWidth + "px";
+        });
+    }
+    editMaxHeight();
+    window.addEventListener('resize', editMaxHeight);
 });
