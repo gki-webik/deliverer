@@ -2,13 +2,13 @@
 window.addEventListener('scroll', function () {
     const menu = document.querySelector('header');
     if (screen.width > 500) {
-        if (window.scrollY > 200) {
+        if (window.scrollY > 100) {
             menu.classList.add('scrolled');
         } else {
             menu.classList.remove('scrolled');
         }
     } else {
-        if (window.scrollY > 70) {
+        if (window.scrollY > 20) {
             menu.classList.add('scrolled');
         } else {
             menu.classList.remove('scrolled');

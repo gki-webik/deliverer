@@ -30,8 +30,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
                 обслуживание клиентов благодаря нашему стремлению к совершенству.</p>
         </div>
         <div class="img">
-            <img src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/6565dce60d28dc50fb69dd07_Image-p-800.webp"
-                alt="">
+            <img src="./assets/images/5.webp" alt="">
         </div>
     </div>
 
@@ -139,7 +138,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
             <div class="centerStatusSuccess is-none">Спасибо за обращение.</div>
             <div class="centerStatusError is-none">Ошибка</div>
             <div class="block_left">
-                <div class="title">Войти в контакт</div>
+                <div class="title">Отдел Поддержки</div>
                 <input type="text" name="fio" class="formContact_fio" placeholder="Полное имя">
                 <div>
                     <input type="email" name="email" class="formContact_email" placeholder="Электронная почта">

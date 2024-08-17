@@ -366,6 +366,7 @@ a:hover {
     width: inherit;
     margin: 0 !important;
     padding: 30px 15px;
+    gap: 15px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -383,12 +384,17 @@ a:hover {
   }
 }
 .block4 .block_left input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 1em;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
   outline: none;
 }
 .block4 .block_left input::-webkit-input-placeholder {
@@ -411,7 +417,7 @@ a:hover {
 }
 .block4 .block_left textarea {
   width: 100%;
-  padding: 10px;
+  padding: 14px 24px;
   margin-bottom: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -420,20 +426,9 @@ a:hover {
   max-height: 300px;
   outline: none;
   min-height: 100px;
-}
-.block4 .block_left textarea::-webkit-input-placeholder {
-  font-family: "DM Sans", sans-serif !important;
-}
-.block4 .block_left textarea::-moz-placeholder {
-  font-family: "DM Sans", sans-serif !important;
-}
-.block4 .block_left textarea:-ms-input-placeholder {
-  font-family: "DM Sans", sans-serif !important;
-}
-.block4 .block_left textarea::-ms-input-placeholder {
-  font-family: "DM Sans", sans-serif !important;
-}
-.block4 .block_left textarea::placeholder {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
   font-family: "DM Sans", sans-serif !important;
 }
 .block4 .block_left textarea:focus {

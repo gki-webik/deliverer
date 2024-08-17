@@ -42,16 +42,16 @@ $menu = '
         <nav class="navMenu">
             <ul>
                 <li><a href="/about">О компании</a></li>
-                <li><a href="#">Вакансии</a></li>
+                <li><a href="/vacancy">Вакансии</a></li>
                 <li><a href="/contact">Контакты</a></li>
-                <li><a href="https://deliverer.ru/contact#formContact">Обратная связь</a></li>
+                <li><a href="/contact#formContact">Обратная связь</a></li>
             </ul>
         </nav>
         <button type="button" class="openMenu">
             <img src="./assets/images/menu-btn.svg"
                 alt="Кнопка Закрыть">
         </button>
-        <button class="contact-button" onclick="document.location.href=\'https://deliverer.ru/contact#formContact\'">Связаться с нами</button>
+        <button class="contact-button" onclick="document.location.href=\'/contact#formContact\'">Связаться с нами</button>
     </div>
     <div class="is-blur"></div>
 </header>
@@ -64,11 +64,11 @@ $menu = '
     </div>
     <ul>
         <li><a href="/about">О компании</a></li>
-        <li><a href="#">Вакансии</a></li>
+        <li><a href="/vacancy">Вакансии</a></li>
         <li><a href="/contact">Контакты</a></li>
-        <li><a href="https://deliverer.ru/contact#formContact">Обратная связь</a></li>
+        <li><a href="/contact#formContact">Обратная связь</a></li>
     </ul>
-    <button class="contact-button" onclick="document.location.href=\'https://deliverer.ru/contact#formContact\'">Связаться с нами</button>
+    <button class="contact-button" onclick="document.location.href=\'/contact#formContact\'">Связаться с нами</button>
 </div>
 ';
 $footer = '
@@ -83,8 +83,8 @@ $footer = '
     </div>
     <nav>
         <ul>
-            <li><a href="#">Вакансии</a></li>
-            <li><a href="https://deliverer.ru/contact#formContact">Обратная связь</a></li>
+            <li><a href="/vacancy">Вакансии</a></li>
+            <li><a href="/contact#formContact">Обратная связь</a></li>
         </ul>
         <ul>
             <li><a href="/about">О компании</a></li>
