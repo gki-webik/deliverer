@@ -44,6 +44,10 @@ h2 {
   font-size: 3em;
 }
 
+.wk-modal-card-body h2 {
+  font-size: 1.6rem !important;
+}
+
 p {
   margin-bottom: 20px;
 }
