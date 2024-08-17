@@ -199,6 +199,33 @@ function submitContactForm() {
     }
 }
 
+
+function submitContactFormModal() {
+    function validateEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+    function validatePhone(phone) {
+        const phonePattern = /^\+?[1-9]\d{1,14}$/;
+        return phonePattern.test(phone);
+    }
+    if (validateEmail(document.querySelector(".formContactModal_email").value) && validatePhone(document.querySelector(".formContactModal_tel").value)) {
+        document.querySelector(".formContactModal").classList.add("is-none");
+        document.querySelector(".centerStatusSuccessModal").classList.remove("is-none");
+        const formData = new FormData(document.querySelector(".formContactModal"));
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', document.querySelector(".formContactModal").action);
+        xhr.addEventListener('load', () => {
+            document.querySelector(xhr.status === 200 ? ".centerStatusSuccessModal" : ".centerStatusErrorModal").classList.remove("is-none");
+        });
+        xhr.addEventListener('error', () => {
+            document.querySelector(".centerStatusSuccessModal").classList.add("is-none")
+            document.querySelector(".centerStatusErrorModal").classList.remove("is-none")
+        });
+        xhr.send(formData);
+    }
+}
+
 /* Цифры от GSAP */
 document.addEventListener('DOMContentLoaded', function () {
     const counterElement = document.querySelector('.counter');

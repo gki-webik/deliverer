@@ -25,7 +25,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
 </head>
 
 <body>
-
     <?php print_r($menu); ?>
 
     <div class="main_block">

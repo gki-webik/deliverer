@@ -16,8 +16,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
 
     <!-- Стиль Сайта -->
     <link rel="stylesheet" href="/assets/styles/dist/contact.css?data=<?php print_r(rand(0, 1000)) ?>">
-    <!-- Иконки -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>

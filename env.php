@@ -31,6 +31,10 @@ $meta = '
 <link rel="stylesheet" href="/assets/styles/dist/menu.css">
 <!-- Стиль футера -->
 <link rel="stylesheet" href="/assets/styles/dist/footer.css">
+<!-- Иконки -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<!-- Модалка -->
+<link rel="stylesheet" href="https://gki-wbk.ru/files/lib/mwk/mwk.min.css" />
 ';
 $menu = '
 <header>
@@ -98,5 +102,6 @@ $footer = '
         <button type="button" class="btnNewsletter" onclick="submitNewsletter()">Подписаться на новости</button>
     </form>
 </footer>
+<script src="https://gki-wbk.ru/files/lib/mwk/mwk.min.js"></script>
 ';
 ?>
