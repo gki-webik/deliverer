@@ -1,3 +1,5 @@
+/* Разработано в WK Studio - gki-webik.ru/studio */
+
 /* Меню */
 window.addEventListener('scroll', function () {
     const menu = document.querySelector('header');
@@ -362,3 +364,5 @@ document.addEventListener('DOMContentLoaded', function () {
     editMaxHeight();
     window.addEventListener('resize', editMaxHeight);
 });
+
+/* Разработано в WK Studio - gki-webik.ru/studio */

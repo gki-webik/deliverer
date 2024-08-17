@@ -15,7 +15,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
     <?php print_r($meta); ?>
 
     <!-- Стиль Сайта -->
-    <link rel="stylesheet" href="/assets/styles/dist/vacancy.css?data=<?php print_r(rand(0, 1000)) ?>">
+    <link rel="stylesheet" href="/assets/styles/dist/vacancy.css">
 </head>
 
 <body>

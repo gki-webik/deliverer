@@ -1,3 +1,5 @@
+# Разработано в WK Studio - gki-webik.ru/studio
+
 # https
 # RewriteEngine on
 # RewriteCond %{HTTP:X-Forwarded-Proto} !https

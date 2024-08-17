@@ -6,6 +6,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
 <html lang="ru">
 
 <head>
+    <!-- Разработано в WK Studio - gki-webik.ru/studio -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

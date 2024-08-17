@@ -1,6 +1,7 @@
 <?php
 $siteUrl = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $meta = '
+<!-- Разработано в WK Studio - gki-webik.ru/studio -->
 <!-- Важная сео информация -->
 <!-- Имя владельца -->
 <meta name="author" lang="ru" content="Кирилл Гуляев" />
@@ -25,8 +26,8 @@ $meta = '
 <!-- Ссылка на смс -->
 <link rel="me" href="sms:+79836214418">
 <!-- Фавиконки -->
-<link rel="icon" href="https://gki-wbk.ru/files/images/regular/iconka.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="https://gki-wbk.ru/files/images/regular/iconka.png" />
+<link rel="icon" href="/assets/images/High1024.webp" type="image/webp" />
+<link rel="apple-touch-icon" href="/assets/images/High1024.webp" />
 <!-- Стиль меню -->
 <link rel="stylesheet" href="/assets/styles/dist/menu.css">
 <!-- Стиль футера -->
@@ -103,5 +104,6 @@ $footer = '
     </form>
 </footer>
 <script src="https://gki-wbk.ru/files/lib/mwk/mwk.min.js"></script>
+<!-- Разработано в WK Studio - gki-webik.ru/studio -->
 ';
 ?>

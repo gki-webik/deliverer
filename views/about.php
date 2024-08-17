@@ -9,13 +9,13 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Краткое описание сайта -->
-    <meta name="description" content="О Нас" />
-    <title>О Нас</title>
+    <meta name="description" content="О Компании" />
+    <title>О Компании</title>
 
     <?php print_r($meta); ?>
 
     <!-- Стиль Сайта -->
-    <link rel="stylesheet" href="/assets/styles/dist/about.css?data=<?php print_r(rand(0, 1000)) ?>">
+    <link rel="stylesheet" href="/assets/styles/dist/about.css">
 </head>
 
 <body>

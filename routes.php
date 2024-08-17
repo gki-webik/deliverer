@@ -1,4 +1,5 @@
 <?php
+/* Разработано в WK Studio - gki-webik.ru/studio */
 require_once __DIR__ . '/router.php';
 
 get('/', 'index.php');
