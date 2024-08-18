@@ -1,6 +1,6 @@
 <?php
-define('TELEGRAM_TOKEN', '7354755351:AAEbKsh4XZZOVwWru3kN95Cf8lCePL6ioYM');
-define('TELEGRAM_CHAT_ID', '6317166538');
+define('TELEGRAM_TOKEN', '#####');
+define('TELEGRAM_CHAT_ID', '#####');
 
 function message_to_telegram($mail)
 {
