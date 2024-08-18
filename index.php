@@ -27,6 +27,29 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
 </head>
 
 <body>
+
+    <div class="wk-modal isModalFormHelp" data-id="wk-modal-formHelp">
+        <div class="wk-modal-background is-active"></div>
+        <div class="wk-modal-content">
+            <section class="wk-modal-card-body">
+                <h2>Отдел Поддержки</h2>
+                <div class="centerStatusSuccessModal is-none">Спасибо за обращение.</div>
+                <div class="centerStatusErrorModal is-none">Ошибка</div>
+                <form action="/api/sendForm.php" class="formContactModal">
+                    <input type="text" name="fio" class="formContactModal_fio" placeholder="Полное имя">
+                    <div>
+                        <input type="email" name="email" class="formContactModal_email" placeholder="Электронная почта">
+                        <input type="tel" name="tel" class="formContactModal_tel" placeholder="Телефон">
+                    </div>
+                    <textarea type="text" name="text" class="formContactModal_text"
+                        placeholder="Пример текста"></textarea>
+                    <input type="text" class="is-none" name="type" value="4">
+                    <button type="button" onclick="submitContactFormModal()">Отправить</button>
+                </form>
+            </section>
+        </div>
+        <button class="wk-modal-close js-active is-large"></button>
+    </div>
     <?php print_r($menu); ?>
 
     <div class="main_block">
