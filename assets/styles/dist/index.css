@@ -1074,6 +1074,7 @@
   border-bottom: 5px solid #ce0000;
   background-color: #ededed;
   overflow: hidden;
+  height: 98%;
 }
 .slider_box .slider_main .slider .slide .body p {
   padding: 19px;
