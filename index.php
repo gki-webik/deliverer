@@ -45,7 +45,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
                         placeholder="Пример текста"></textarea>
                     <input type="text" class="is-none" name="type" value="4">
                     <p class="policyModalAcept"><label><input type="checkbox" class="checkPolicy" /> Я соглашаюсь с <a
-                                href="/">Политикой
+                                href="/policy">Политикой
                                 Конфиденциальности</a></label></p>
                     <button type="button" class="btnFormModalHelpCheck is-disabled" disabled
                         onclick="submitContactFormModal()">Отправить</button>
