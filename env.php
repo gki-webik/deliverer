@@ -29,7 +29,7 @@ $meta = '
 <link rel="icon" href="/assets/images/High1024.webp" type="image/webp" />
 <link rel="apple-touch-icon" href="/assets/images/High1024.webp" />
 <!-- Стиль меню -->
-<link rel="stylesheet" href="/assets/styles/dist/menu.css">
+<link rel="stylesheet" href="/assets/styles/dist/menu.css?data=' . rand(0, 1000) . '">
 <!-- Стиль футера -->
 <link rel="stylesheet" href="/assets/styles/dist/footer.css">
 <!-- Иконки -->

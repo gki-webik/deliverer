@@ -350,3 +350,18 @@ header .contact-button {
   padding: 55px 0;
   text-align: center;
 }
+
+.policyModalAcept {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.policyModalAcept input {
+  width: 10px !important;
+}
+
+.is-disabled {
+  cursor: default !important;
+  background-color: #938484 !important;
+}

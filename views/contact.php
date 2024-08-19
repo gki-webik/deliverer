@@ -35,7 +35,21 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
                     <textarea type="text" name="text" class="formContactModal_text"
                         placeholder="Пример текста"></textarea>
                     <input type="text" class="is-none" name="type" value="4">
-                    <button type="button" onclick="submitContactFormModal()">Отправить</button>
+                    <p class="policyModalAcept"><label><input type="checkbox" class="checkPolicy" /> Я соглашаюсь с <a
+                                href="/policy">Политикой
+                                Конфиденциальности</a></label></p>
+                    <button type="button" class="btnFormModalHelpCheck is-disabled" disabled
+                        onclick="submitContactFormModal()">Отправить</button>
+                    <script>
+                        const checkPolicy = document.querySelector(".checkPolicy");
+                        const btnFormModalHelpCheck = document.querySelector(".btnFormModalHelpCheck");
+
+                        checkPolicy.addEventListener("change", () => {
+                            const isChecked = checkPolicy.checked;
+                            btnFormModalHelpCheck.disabled = !isChecked;
+                            btnFormModalHelpCheck.classList.toggle("is-disabled", !isChecked);
+                        });
+                    </script>
                 </form>
             </section>
         </div>
