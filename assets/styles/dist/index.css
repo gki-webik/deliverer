@@ -1004,17 +1004,7 @@
 }
 @media screen and (max-width: 627px) {
   .slider_box {
-    margin-top: 17em;
-  }
-}
-@media screen and (max-width: 537px) {
-  .slider_box {
-    margin-top: 14em;
-  }
-}
-@media screen and (max-width: 383px) {
-  .slider_box {
-    margin-top: 20em;
+    margin-top: 10em;
   }
 }
 .slider_box h3 {
