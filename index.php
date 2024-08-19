@@ -23,7 +23,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
     <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
     <!-- Стиль Сайта -->
-    <link rel="stylesheet" href="/assets/styles/dist/index.css">
+    <link rel="stylesheet" href="/assets/styles/dist/index.css?data=<?php print_r(rand(0, 100000)); ?>">
 </head>
 
 <body>
@@ -67,7 +67,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
         <div class="white_circle"></div>
     </div>
 
-    <div class="brieflyAbout">
+    <!-- <div class="brieflyAbout">
         <div class="blockImg">
             <img src="./assets/images/1.webp" loading="lazy" alt="">
             <div class="description">БОЛЕЕ 3 ЛЕТ УСПЕШНОЙ РАБОТЫ</div>
@@ -87,6 +87,59 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
                     <div class="img is-left is-4"></div>
                 </div>
                 <div class="count"><span class="counter">0</span><span>K+</span> довольных клиентов</div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="section">
+        <div class="base-container w-container">
+            <div class="content-wrapper-grid-2c">
+                <div class="grid-cell-wrap first">
+                    <img class="about-us-image"
+                        src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/6564a7b8c9ddf1df07e9aa9a_About-deliverer.webp"
+                        alt="Family"
+                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 41vw, 610.5px"
+                        loading="lazy"
+                        srcset="https://assets-global.website-files.com/65636268c62f3d0464956cf4/6564a7b8c9ddf1df07e9aa9a_About-deliverer-p-500.webp 500w, https://assets-global.website-files.com/65636268c62f3d0464956cf4/6564a7b8c9ddf1df07e9aa9a_About-deliverer-p-800.webp 800w, https://assets-global.website-files.com/65636268c62f3d0464956cf4/6564a7b8c9ddf1df07e9aa9a_About-deliverer.webp 866w">
+                    <div class="absolute-block-years">
+                        <div class="big-number">БОЛЕЕ 3 ЛЕТ <br> УСПЕШНОЙ РАБОТЫ</div>
+                    </div>
+                </div>
+                <div class="grid-cell-wrap text">
+                    <div class="paragraph-wrapper">
+                        <p class="paragraph-large mt-30">Транспортная компания 000 ТК « » основана в 2021 г. с целью
+                            оказания услуг по доставке грузов собственным
+                            или партнерским грузовым автомобильным транспортом грузоподьемностью от 3 до 20 тонн, в том
+                            числе грузов,
+                            требующих специального режима. Весь транспорт компании своевременно обслуживается в
+                            дилерских центрах, что
+                            гарантирует своевременную доставку груза клиенту. Компания динамично развивается на рынке
+                            грузоперевозок и
+                            имеет в собственности грузовой автомобильный транспорт не старше 4 лет. Управляют
+                            транспортными средствами
+                            водители-экспедиторы со стажем работы от 5 лет.</p>
+                    </div>
+                    <div class="social-prove-wrap">
+                        <div class="people-images-wrap">
+                            <div class="person-image"><img
+                                    src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d76_Rectangle%201093%20(1).jpg"
+                                    loading="lazy" alt="Girl Image" class="customer-image-small"></div>
+                            <div class="person-image"><img
+                                    src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d77_Rectangle%201094%20(1).jpg"
+                                    loading="lazy" alt="Boy Image" class="customer-image-small"></div>
+                            <div class="person-image"><img
+                                    src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d75_Rectangle%201092%20(1).jpg"
+                                    loading="lazy" alt="Girl Image" class="customer-image-small"></div>
+                            <div class="person-image"><img
+                                    src="https://assets-global.website-files.com/65636268c62f3d0464956cf4/65636268c62f3d0464956d78_Rectangle%201095%20(1).jpg"
+                                    loading="lazy" alt="Girl Image" class="customer-image-small"></div>
+                        </div>
+                        <div class="social-prove-info-text">
+                            <p class="numeric"><span class="counter">0</span>K+</p>
+                            <p class="paragraph-large">довольных клиентов</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -194,6 +247,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
         <div class="map">
             <img src="./assets/images/3.png" alt="Карта">
         </div>
+    </div>
+    <div class="statistics_block">
         <div class="statistics">
             <div><span class="is-red"><span class="spanCount1">0</span>K+</span> <span>Доставок грузов</span></div>
             <div><span class="is-red"><span class="spanCount2">0</span>+</span> <span>Новых клиентов каждый день</span>
@@ -202,7 +257,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/env.php");
             <div><span class="is-red"><span class="spanCount4">0</span>%</span> <span>Довольных клиентов</span></div>
         </div>
     </div>
-
     <div class="slider_box">
         <h3>Качественное решение ваших задач</h3>
         <div class="slider_main">
