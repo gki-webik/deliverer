@@ -50,6 +50,7 @@ $menu = '
                 <li><a href="/vacancy">Вакансии</a></li>
                 <li><a href="/contact">Контакты</a></li>
                 <li><a role="button" class="js-active-modal" data-id="wk-modal-formHelp">Обратная связь</a></li>
+                <li><a href="tel:+79182666633">+7 (918) 266-66-33</a></li>
             </ul>
         </nav>
         <button type="button" class="openMenu">
@@ -72,6 +73,7 @@ $menu = '
         <li><a href="/vacancy">Вакансии</a></li>
         <li><a href="/contact">Контакты</a></li>
         <li><a role="button" class="js-active-modal" data-id="wk-modal-formHelp">Обратная связь</a></li>
+        <li><a href="tel:+79182666633">+7 (918) 266-66-33</a></li>
     </ul>
     <button class="contact-button js-active-modal" data-id="wk-modal-formHelp">Связаться с нами</button>
 </div>
